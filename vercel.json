@@ -6,7 +6,7 @@
       "use": "@vercel/static-build",
       "config": {
         "distDir": "build"
-      }
+      }	
     }
   ],
   "routes": [
@@ -23,5 +23,9 @@
         "Cache-Control": "no-cache"
       }
     }
-  ]
+  ],
+  
+  "build": {
+    "output": "dist" // Replace with your actual output dir (e.g., "out", ".next", etc.)
+  }
 }
