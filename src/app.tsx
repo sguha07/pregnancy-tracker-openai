@@ -67,7 +67,7 @@ class KnowledgeBaseService {
   private embeddingsGenerated = false;
 
   constructor() {
-    const apiKey = import.meta.env.VITE_OPENAI_API_KEY;
+    const apiKey = process.env.VITE_OPENAI_API_KEY || import.meta.env.VITE_OPENAI_API_KEY;
     if (apiKey) {
       this.openai = new OpenAI({
         apiKey: apiKey,
@@ -79,7 +79,7 @@ class KnowledgeBaseService {
   async initialize() {
     // Load knowledge base
     try {
-      const response = await fetch('/knowledgeBase.json');
+      const response = await fetch('./knowledgeBase.json');
       const data = await response.json();
       this.knowledgeBase = data.pregnancyKnowledgeGraph;
       
@@ -333,16 +333,14 @@ const PregnancyTrackerApp: React.FC = () => {
   }, [chatMessages]);
 
   useEffect(() => {
-    if (dueDate) {
-      const today = new Date();
-      const due = new Date(dueDate);
-      const diffTime = due.getTime() - today.getTime();
-      const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-      const weeksRemaining = Math.floor(diffDays / 7);
-      const calculatedWeek = Math.max(1, Math.min(40, 40 - weeksRemaining));
-      setCurrentWeek(calculatedWeek);
-    }
-  }, [dueDate]);
+  const savedDate = localStorage.getItem('pregnancyDueDate');
+  if (savedDate) {
+    setDueDate(savedDate);
+  } else {
+    setModalVersion(1);
+  }
+}, []);
+
 
   const handleDueDateSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -374,7 +372,7 @@ const PregnancyTrackerApp: React.FC = () => {
       
       let assistantMessage: Message;
       
-      if (!import.meta.env.VITE_OPENAI_API_KEY) {
+      if (!process.env.VITE_OPENAI_API_KEY || import.meta.env.VITE_OPENAI_API_KEY) {
         // Fallback if no API key
         assistantMessage = {
           role: 'assistant',
@@ -389,7 +387,7 @@ const PregnancyTrackerApp: React.FC = () => {
 
         // Call OpenAI
         const openai = new OpenAI({
-          apiKey: import.meta.env.VITE_OPENAI_API_KEY,
+          apiKey: process.env.VITE_OPENAI_API_KEY || import.meta.env.VITE_OPENAI_API_KEY,
           dangerouslyAllowBrowser: true
         });
 
