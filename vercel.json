@@ -5,25 +5,26 @@
       "src": "package.json",
       "use": "@vercel/static-build",
       "config": {
-        "distDir": "build" // Make sure your app outputs to this dir
+        "distDir": "build"
       }
     }
   ],
-  "headers": [
+  "routes": [
     {
-      "source": "/static/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
+      "src": "/static/(.*)",
+      "headers": {
+        "Cache-Control": "public, max-age=31536000, immutable"
+      }
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html",
+      "headers": {
+        "Cache-Control": "no-cache"
+      }
     }
   ],
   "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/index.html" // For SPAs (e.g., React, Vue)
-    }
+    { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
