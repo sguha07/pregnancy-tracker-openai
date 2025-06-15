@@ -1,0 +1,123 @@
+{
+  "pregnancyKnowledgeGraph": {
+    "nutritionalRequirements": {
+      "dailyMacros": [
+        { "nutrient": "Folic Acid", "amount": "600-800", "unit": "mcg", "category": "vitamin" },
+        { "nutrient": "Calcium", "amount": "1000-2500", "unit": "mg", "category": "mineral" },
+        { "nutrient": "Protein", "amount": "88", "unit": "gm", "category": "macronutrient" },
+        { "nutrient": "Iron", "amount": "27", "unit": "mg", "category": "mineral" },
+        { "nutrient": "Vitamin D", "amount": "600", "unit": "IUs", "category": "vitamin" }
+      ],
+      "weightGainRecommendations": [
+        { "prePregnancyBMI": "Underweight", "bmiRange": "<18.5", "recommendedGain": "28-40", "unit": "pounds" },
+        { "prePregnancyBMI": "Healthy weight", "bmiRange": "18.5-24.9", "recommendedGain": "25-35", "unit": "pounds" },
+        { "prePregnancyBMI": "Overweight", "bmiRange": "25-29.9", "recommendedGain": "15-25", "unit": "pounds" },
+        { "prePregnancyBMI": "Obese", "bmiRange": "≥30", "recommendedGain": "11-20", "unit": "pounds" }
+      ]
+    },
+    "foodSafety": {
+      "seafoodGuidelines": {
+        "safe": ["Rawas"],
+        "unsafe": ["Bangda", "Pamplet", "Surmai", "Katla", "Rohu", "Swordfish", "Tilefish", "Tuna (bigeye, albacore)", "Mori", "Waghbeer"]
+      },
+      "avoidFoods": [
+        { "item": "Non-pasteurized dairy", "includes": ["home made yogurt"] },
+        { "item": "Caffeine", "includes": ["Tea", "carbonated beverages", "cocoa", "chocolate"] },
+        { "item": "Vitamin A supplements", "details": "Avoid preformed vitamin A (retinol)" }
+      ]
+    },
+    "morningSicknessManagement": {
+      "whatToEat": ["Bland, dry foods", "Protein-rich foods", "Ginger-based foods"],
+      "avoidFoods": ["Greasy foods", "Spicy foods", "Fatty foods"],
+      "eatingTips": ["Eat crackers before getting up", "Snack often", "Don't let stomach go empty"],
+      "hydrationTips": ["Sip water or ginger ale", "Suck on ice chips"]
+    },
+    "pregnancyTimeline": {
+      "weeks9to12": {
+        "trimester": "First",
+        "title": "Third Month: Nearing End of First Trimester",
+        "commonSymptoms": [
+          { "symptom": "Morning sickness", "status": "Peaks now, eases by weeks 13-14" },
+          { "symptom": "Fatigue & dizziness", "status": "Heart working harder" },
+          { "symptom": "Breast soreness", "status": "Body growing and stretching" },
+          { "symptom": "Frequent urination", "status": "Uterus pressing on bladder" }
+        ],
+        "exercise": {
+          "name": "Side plank",
+          "benefits": "Strengthens core muscles",
+          "instructions": ["Lie on side", "Raise onto forearm", "Hold position", "Repeat 5-10 times"]
+        }
+      },
+      "weeks13to16": {
+        "trimester": "Second",
+        "title": "Golden Period - Second Trimester Begins",
+        "commonSymptoms": [
+          { "symptom": "Energy returning", "status": "Nausea and fatigue easing" },
+          { "symptom": "Nasal congestion", "status": "Increased blood flow" },
+          { "symptom": "Skin changes", "status": "Darker patches may appear" },
+          { "symptom": "Belly growth", "status": "May start showing" }
+        ],
+        "exercise": {
+          "name": "Back press",
+          "benefits": "Supports good posture",
+          "instructions": ["Stand against wall", "Press lower back to wall", "Hold several seconds", "Repeat 5-10 times"]
+        }
+      }
+    },
+    "symptomTroubleshooting": {
+      "categories": [
+        {
+          "category": "Vaginal Bleeding/Discharge",
+          "symptoms": [
+            { "sign": "Slight spotting < 1 day", "urgency": "Within 24 hrs", "action": "Monitor", "severity": "low" },
+            { "sign": "Heavy bleeding", "urgency": "Immediately", "action": "Emergency", "severity": "high" },
+            { "sign": "Green/yellow discharge", "urgency": "Within 24 hrs", "action": "Infection risk", "severity": "medium" }
+          ]
+        },
+        {
+          "category": "Pain",
+          "symptoms": [
+            { "sign": "Mild cramping", "urgency": "Next visit", "action": "Common", "severity": "low" },
+            { "sign": "Severe headache with vision changes", "urgency": "Immediately", "action": "Emergency", "severity": "high" },
+            { "sign": "Leg pain with swelling", "urgency": "Immediately", "action": "Blood clot risk", "severity": "high" }
+          ]
+        },
+        {
+          "category": "Other Symptoms",
+          "symptoms": [
+            { "sign": "Fever < 102°F", "urgency": "Within 24 hrs", "action": "Monitor", "severity": "medium" },
+            { "sign": "Fever ≥ 102°F", "urgency": "Immediately", "action": "High risk", "severity": "high" },
+            { "sign": "Sudden face/hand swelling", "urgency": "Same day", "action": "Preeclampsia sign", "severity": "high" }
+          ]
+        }
+      ]
+    },
+    "medications": {
+      "byCondition": [
+        {
+          "condition": "Pain and Fever",
+          "medications": [
+            { "drug": "Acetaminophen", "brand": "Tylenol", "safety": "🟢", "safetyLevel": "Generally Safe" },
+            { "drug": "Ibuprofen", "brand": "Advil", "safety": "🟡", "safetyLevel": "Use with Caution", "note": "Only 1st/2nd trimester" },
+            { "drug": "Aspirin", "safety": "🔴", "safetyLevel": "Avoid", "note": "Unless directed by doctor" }
+          ]
+        },
+        {
+          "condition": "Allergies/Cold",
+          "medications": [
+            { "drug": "Cetirizine", "brand": "Zyrtec", "safety": "🟢", "safetyLevel": "Generally Safe" },
+            { "drug": "Loratadine", "brand": "Claritin", "safety": "🟢", "safetyLevel": "Generally Safe" },
+            { "drug": "Pseudoephedrine", "brand": "Sudafed", "safety": "🟡", "safetyLevel": "Use with Caution", "note": "Avoid 1st trimester" }
+          ]
+        },
+        {
+          "condition": "Heartburn",
+          "medications": [
+            { "drug": "Calcium carbonate", "brand": "Tums", "safety": "🟢", "safetyLevel": "Generally Safe" },
+            { "drug": "Famotidine", "brand": "Pepcid", "safety": "🟢", "safetyLevel": "Generally Safe" }
+          ]
+        }
+      ]
+    }
+  }
+}
